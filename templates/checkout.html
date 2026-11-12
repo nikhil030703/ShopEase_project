@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<h1>Checkout</h1><div class="layout">
+<form class="panel" method="post" action="/checkout"><h2>Delivery details</h2>
+<label>Full name<input value="{{ user.full_name }}" readonly></label><label>Email<input type="email" value="{{ user.email }}" readonly></label>
+<label>Delivery address<textarea name="address" required></textarea></label><button class="btn">Place demo order</button><p>No real payment is collected in this demo.</p></form>
+<aside><h2>Order total</h2><h2>₹{{ '{:,.0f}'.format(total) }}</h2></aside></div>{% endblock %}

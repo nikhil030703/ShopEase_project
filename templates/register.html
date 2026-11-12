@@ -1,0 +1,7 @@
+{% extends 'base.html' %}{% block title %}Create account | ShopEase{% endblock %}{% block content %}
+<section class="panel auth-panel"><span class="section-kicker">JOIN THE COMMUNITY</span><h1>Create your account</h1><p>One quick signup, then you're ready to shop.</p>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}<form method="post" action="/register">
+<label>Full name<input name="full_name" placeholder="Your name" required minlength="2" autocomplete="name"></label>
+<label>Email address<input type="email" name="email" placeholder="you@example.com" required autocomplete="email"></label>
+<label>Password<input type="password" name="password" placeholder="At least 8 characters" required minlength="8" autocomplete="new-password"></label>
+<button class="btn full" type="submit">Create account&nbsp; →</button></form><p>Already have an account? <a href="/login">Login here</a></p></section>{% endblock %}

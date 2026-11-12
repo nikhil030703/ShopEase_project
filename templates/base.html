@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}ShopEase | Everyday finds, made easy{% endblock %}</title>
+<meta name="description" content="ShopEase demo store for tech, fashion and everyday essentials.">
+<link rel="stylesheet" href="/static/style.css"></head>
+<body><header class="site-header"><div class="header-inner">
+<a class="brand" href="/">ShopEase<span>.</span></a><nav class="nav-links">
+<a href="/">Home</a><a href="/cart">Cart <b class="cart-count">{{ cart_count|default(0) }}</b></a>
+{% if request.session.get('user_id') %}<a href="/orders">My Orders</a><span class="welcome">Hi, {{ request.session.get('user_name', 'User') }}</span><form class="nav-logout" method="post" action="/logout"><button class="nav-button" type="submit">Logout</button></form>
+{% else %}<a href="/login">Login</a><a class="btn secondary" href="/register">Create account</a>{% endif %}
+</nav></div></header><main>{% block content %}{% endblock %}</main><footer>ShopEase · A colorful FastAPI demo store · Built with Python, FastAPI & SQLite</footer></body></html>

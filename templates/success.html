@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<div class="empty"><h1>Order confirmed! ✓</h1><p>Thank you, {{ order.customer_name }}. Your demo order #{{ order.id }} is placed.</p><h2>Total ₹{{ '{:,.0f}'.format(order.total) }}</h2><a class="btn" href="/">Continue shopping</a></div>{% endblock %}

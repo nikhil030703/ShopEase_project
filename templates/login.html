@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block title %}Login | ShopEase{% endblock %}{% block content %}
+<section class="panel auth-panel"><span class="section-kicker">WELCOME BACK</span><h1>Login to ShopEase</h1><p>Sign in to continue shopping and keep track of your orders.</p>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}<form method="post" action="/login"><input type="hidden" name="next" value="{{ next_url }}">
+<label>Email address<input type="email" name="email" placeholder="you@example.com" required autocomplete="email"></label>
+<label>Password<input type="password" name="password" placeholder="Enter your password" required autocomplete="current-password"></label>
+<button class="btn full" type="submit">Login&nbsp; →</button></form><p>New to ShopEase? <a href="/register">Create an account</a></p></section>{% endblock %}
